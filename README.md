@@ -1,5 +1,5 @@
 # VBA-challenge
-I saved my script with the export option in VBA (as VBA_Challenge.cls), it works for al ws including the Bonus challenge.
+Included .VBS file with code since i had originally saved my script with the export option in VBA (as VBA_Challenge.cls), it works for al ws including the Bonus challenge.
 
 --------------------------------------------------------------------------------------------------------------
 Sub ticker_ALLSHEETS()
