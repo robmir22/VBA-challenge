@@ -5,23 +5,23 @@ I saved my script with the export option in VBA (as VBA_Challenge.cls), it works
 Sub ticker_ALLSHEETS()
 
 For Each ws In Worksheets
-Dim Worksheetname As String
-Dim stock_volume As LongLong
-Dim open_value, close_value, j, i, k As LongLong
+ Dim Worksheetname As String
+ Dim stock_volume As LongLong
+ Dim open_value, close_value, j, i, k As LongLong
 
 
-ws.Cells(1, 9).Value = "Ticker"
-ws.Cells(1, 10).Value = "Yearly Change"
-ws.Cells(1, 11).Value = "Percent Change"
-ws.Cells(1, 12).Value = "Total Stock Volume"
+ ws.Cells(1, 9).Value = "Ticker"
+ ws.Cells(1, 10).Value = "Yearly Change"
+ ws.Cells(1, 11).Value = "Percent Change"
+ ws.Cells(1, 12).Value = "Total Stock Volume"
 
 
-stock_volume = 0
-j = 2
-open_value = ws.Cells(2, 3)
+ stock_volume = 0
+ j = 2
+ open_value = ws.Cells(2, 3)
 
 
-For i = 2 To ws.Cells(Rows.Count, 1).End(xlUp).Row
+ For i = 2 To ws.Cells(Rows.Count, 1).End(xlUp).Row
  
     If ws.Cells(i, 1) = ws.Cells(i + 1, 1) Then
     stock_volume = stock_volume + ws.Cells(i, 7)
@@ -55,6 +55,7 @@ For i = 2 To ws.Cells(Rows.Count, 1).End(xlUp).Row
     End If
 
 Next i
+
 Next ws
 
 For Each ws In Worksheets
