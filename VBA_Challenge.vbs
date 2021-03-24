@@ -28,6 +28,7 @@ For i = 2 To ws.Cells(Rows.Count, 1).End(xlUp).Row
     
     ws.Cells(j, 9) = ws.Cells(i, 1)
     ws.Cells(j, 12) = stock_volume
+    ws.Cells(j, 12).NumberFormat = Number
         
     ws.Cells(j, 10) = (ws.Cells(i, 6) - open_value)
     
@@ -60,9 +61,13 @@ ws.Cells(2, 14).Value = "Greatest % increase"
 ws.Cells(3, 14).Value = "Greatest % decrease"
 ws.Cells(4, 14).Value = "Greatest total volume"
 
-ws.Cells(2, 16).Value = Application.WorksheetFunction.Max(Range("K:K"))
-ws.Cells(3, 16).Value = Application.WorksheetFunction.Min(Range("K:K"))
-ws.Cells(4, 16).Value = Application.WorksheetFunction.Max(Range("L:L"))
+ws.Cells(2, 16).Value = Application.WorksheetFunction.Max(ws.Range("K:K"))
+ws.Cells(3, 16).Value = Application.WorksheetFunction.Min(ws.Range("K:K"))
+ws.Cells(4, 16).Value = Application.WorksheetFunction.Max(ws.Range("L:L"))
+
+ws.Cells(2, 16).NumberFormat = "0.00%"
+ws.Cells(3, 16).NumberFormat = "0.00%"
+ws.Cells(4, 16).NumberFormat = Number
 
 For k = 2 To ws.Cells(Rows.Count, 7).End(xlUp).Row
 
